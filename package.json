@@ -1,0 +1,51 @@
+{
+  "name": "mcp-quickstart",
+  "private": true,
+  "devDependencies": {
+    "fie-api": "^3.1.11",
+    "@applint/spec": "^1.2.3",
+    "chalk": "^5.3.0",
+    "chokidar": "^3.5.3",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-config-standard-react": "^13.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "lerna": "^6.1.0",
+    "prettier": "^3.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.5",
+    "stylelint": "^15.0.0",
+    "typescript": "^5.3.3"
+  },
+  "version": "0.0.42",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf node_modules && lerna clean --yes && rimraf pnpm-lock.yaml",
+    "start": "pnpm --parallel --filter=./packages/* run start",
+    "prettier": "prettier --write 'packages/**/*.{js,jsx,ts,tsx}'",
+    "eslint": "eslint --fix 'packages/**/*.{js,jsx,ts,tsx}'",
+    "lint": "npm run eslint && npm run prettier",
+    "cp": "node  script/create-new-package.js \"${npm_config_name}\" "
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "repository": "git@gitlab.alibaba-inc.com:jth01799810/fire.git",
+  "dependencies": {
+    "@ali/fire-app": "^0.0.23",
+    "eslint": "^8.56.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "packages": [
+    "packages/*"
+  ]
+}
